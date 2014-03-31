@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<p:accordionPanel  cache="true" rendered="#{dockBean.users}" id="displayUser">
+		<p:tab title="Create User">
+			<ui:include src="users/createUser.xhtml" />
+		</p:tab>
+		<p:tab title="displayUser">
+			<p:dataTable var="userr" value="#{userBean.users}"
+				sortMode="multiple" rows="15" paginator="true">
+				<p:column headerText="First Name">
+					<h:outputText value="#{userr.firstName}" />
+				</p:column>
+
+				<p:column headerText="Last Name">
+					<h:outputText value="#{userr.lastName}" />
+				</p:column>
+
+				<p:column headerText="DOB">
+					<h:outputText value="#{userr.DOB}" />
+				</p:column>
+
+				<p:column headerText="Gender">
+					<h:outputText value="#{userr.gender}" />
+				</p:column>
+
+				<p:column headerText="Email">
+					<h:outputText value="#{userr.email}" />
+				</p:column>
+
+				<p:column headerText="Phone Number">
+					<h:outputText value="#{userr.phoneNumber}" />
+				</p:column>
+
+				<p:column headerText="Password">
+					<h:outputText value="#{userr.password}" />
+				</p:column>
+
+				<p:column headerText="Type">
+					<h:outputText value="#{userr.userType}" />
+				</p:column>
+
+				<p:column headerText="Rooms">
+					<h:outputText value="#{userr.rooms}" />
+				</p:column>
+			</p:dataTable>
+		</p:tab>
+	</p:accordionPanel>
+</ui:composition>

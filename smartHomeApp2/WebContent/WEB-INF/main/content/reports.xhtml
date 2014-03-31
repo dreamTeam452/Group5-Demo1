@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:accordionPanel cache="true" rendered="#{dockBean.reports}">
+		<p:tab title="Water Usage">
+			<p:dataTable var="entry" value="#{waterReportsBean.entries}"
+				sortMode="multiple" rows="15" paginator="true">
+				<p:column headerText="Name">
+					<h:outputText value="#{entry.deviceName}" />
+				</p:column>
+
+				<p:column headerText="rate">
+					<h:outputText value="#{entry.rate}" />
+				</p:column>
+
+				<p:column headerText="status">
+					<h:outputText value="#{entry.status}" />
+				</p:column>
+
+				<p:column headerText="total">
+					<h:outputText value="#{entry.total}" />
+				</p:column>
+
+				<p:column headerText="room">
+					<h:outputText value="#{entry.room}" />
+				</p:column>
+			</p:dataTable>
+		</p:tab>
+		<p:tab title="Electrical Usage">
+			<p:dataTable var="ent" value="#{electricReportsBean.entries}"
+				sortMode="multiple" rows="15" paginator="true">
+				<p:column headerText="Name">
+					<h:outputText value="#{ent.deviceName}" />
+				</p:column>
+
+				<p:column headerText="rate">
+					<h:outputText value="#{ent.rate}" />
+				</p:column>
+
+				<p:column headerText="status">
+					<h:outputText value="#{ent.status}" />
+				</p:column>
+
+				<p:column headerText="total">
+					<h:outputText value="#{ent.total}" />
+				</p:column>
+
+				<p:column headerText="room">
+					<h:outputText value="#{ent.room}" />
+				</p:column>
+			</p:dataTable>
+		</p:tab>
+	</p:accordionPanel>
+
+</ui:composition>

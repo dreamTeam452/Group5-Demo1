@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<!-- create users -->
+	<h:form>
+		<p:panel header="Personal Details">
+			<h:panelGrid columns="2">
+				<h:outputText value="Firstname: *" />
+				<p:inputText required="true" label="Firstname"
+					value="#{users.firstname}" />
+
+				<h:outputText value="Lastname: *" />
+				<p:inputText required="true" label="Lastname"
+					value="#{users.lastname}" />
+
+				<h:outputText value="Date of Birth: *" />
+				<p:calendar value="#{users.DOB}" pattern="MM/dd/yyyy" />
+
+				<h:outputText value="Gender: " />
+				<p:selectOneRadio value="#{users.gender}">
+					<f:selectItem itemLabel="Male" itemValue="male" />
+					<f:selectItem itemLabel="Female" itemValue="female" />
+				</p:selectOneRadio>
+			</h:panelGrid>
+		</p:panel>
+		<p:panel header="Contact Information">
+			<h:panelGrid columns="2">
+				<h:outputText value="Email Address: *" />
+				<p:inputText required="true" label="Email" value="#{users.email}" />
+
+				<h:outputText value="Phone Number: *" />
+				<p:inputText required="true" label="Email"
+					value="#{users.phoneNumber}" />
+			</h:panelGrid>
+		</p:panel>
+		<p:panel header="Room Access">
+			<h:outputText value="Room Access:" />
+			<p:selectManyCheckbox id="pageDirection"
+				value="#{users.selectedRooms}" layout="pageDirection">
+				<f:selectItem itemLabel="kitchen" itemValue="kitchen" />
+				<f:selectItem itemLabel="bedroom" itemValue="bedroom" />
+				<f:selectItem itemLabel="bathroom" itemValue="bathroom" />
+			</p:selectManyCheckbox>
+
+			<h:outputText value="User Type: " />
+			<p:selectOneRadio value="#{users.userType}">
+				<f:selectItem itemLabel="Root" itemValue="root" />
+				<f:selectItem itemLabel="Primary" itemValue="primary" />
+				<f:selectItem itemLabel="Secondary" itemValue="secondary" />
+				<f:selectItem itemLabel="Tertiary" itemValue="tertiary" />
+				<f:selectItem itemLabel="Guest" itemValue="guest" />
+			</p:selectOneRadio>
+		</p:panel>
+		<p:panel header="Account">
+			<h:outputText value="Username:" />
+			<p:inputText required="true" label="Username"
+				value="#{users.username}" />
+			<h:outputText value="Password:" />
+			<p:inputText required="true" label="Password" value="#{users.pwd}" />
+		</p:panel>
+
+		<p:commandButton id="Submit" value="Submit"
+			action="#{createUser.constructor}" style="margin-top:5px" />
+	</h:form>
+</ui:composition>

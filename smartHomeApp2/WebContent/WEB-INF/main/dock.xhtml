@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form id="dock">
+
+		<p:dock position="bottom">
+			<p:menuitem value="Home"  icon="resources/images/dock/home.png"
+				update=":center" action="#{dockBean.setHome(true)}" />
+			<p:menuitem value="Users" icon="resources/images/dock/users.png"
+				update=":center" action="#{dockBean.setUsers(true)}" />
+			<p:menuitem value="Devices" icon="/resources/images/dock/devices.png"
+				update=":center" action="#{dockBean.setDevices(true)}" />
+			<p:menuitem value="Rooms" icon="/resources/images/dock/rooms.png"
+				update=":center" action="#{dockBean.setRooms(true)}" />
+			<p:menuitem value="Logs" icon="/resources/images/dock/logs.png"
+				update=":center" action="#{dockBean.setLogs(true)}" />
+			<p:menuitem value="Rules" icon="/resources/images/dock/rules.png"
+				update=":center" action="#{dockBean.setRules(true)}" />
+			<p:menuitem value="Reports" icon="/resources/images/dock/reports.png"
+				update=":center" action="#{dockBean.setReports(true)}" />
+		</p:dock> 
+	</h:form>
+</ui:composition>

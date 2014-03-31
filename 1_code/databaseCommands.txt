@@ -1,0 +1,37 @@
+The following are commands used to create the MySQL database showcased in the demo.
+
+TableName: electricaldevices
+Command:   create table electricaldevices(device varchar(20), wattageRate double, status varchar(20), totalWattage double, room varchar(20));
+
+TableName: entitlement
+Command:   create table entitlement(username varchar(20), device varchar(20), isEntitled boolean);
+
+TableName: eneventdrivenrule
+Command:   create table eventdrivenrule(device varchar(20), deviceaction varchar(100), triggerDevice varchar(20), triggerDeviceAction varchar(100), starttime time, endtime time, notification varchar(100), isOn tinyint(1));
+
+TableName: log
+Command:   Create table log(date date, time time, eventType varchar(100), action varchar(100), Device varchar(20));
+
+TableName: password_security
+Command:   Create table password_security(user varchar(20), incorrectLogins int);
+
+TableName: passwordsecurityrule
+Command:   Create table passwordsecurityrule(threshold int, notification varchar(100), shouldSendNotification boolean, isOn boolean);
+
+TableName: signlerulewinterval
+Command:   Create table singlerulewinterval(device varchar(20), action varchar(100), starttime time, endTime time, frequency varchar(20), notification varchar(100), notificationOn boolean, isOn boolean);
+
+TableName: singletimerule
+Command:   Create table singletimerule(device varchar(20), action varchar(100), time time, date date, notification varchar(100), notificationOn boolean, isOn boolean);
+
+TableName: total_energy
+Command:   Create table total_energy(totalEnergy double);
+
+TableName: total_gallons
+Command:   Create total_gallons(totalGallons double);
+
+TableName: userinfo
+Command:   Create table userinfo(device varchar(20),action varchar(100), time time, date date, notification varchar(100), notificationOn boolean, isOn boolean);
+
+TableName: waterdevices
+Command:   Create table waterdevices( Device varchar(20), gallonsrate double, status varchar(20), totalGallons double, room varchar(20));

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:panelGroup id="center" layout="block">
+		<ui:include src="content/home.xhtml" />
+		<ui:include src="content/users.xhtml" />
+		<ui:include src="content/devices.xhtml" />
+		<ui:include src="content/rooms.xhtml" />
+		<ui:include src="content/logs.xhtml" />
+		<ui:include src="content/rules.xhtml" />
+		<ui:include src="content/reports.xhtml" />
+		
+		<!-- 
+		<h:outputText value="Home" rendered="#{dockBean.home}" />
+		<h:outputText value="Users" rendered="#{dockBean.users}" />
+		<h:outputText value="Devices" rendered="#{dockBean.devices}" />
+		<h:outputText value="rooms" rendered="#{dockBean.rooms}" />
+		<h:outputText value="Logs" rendered="#{dockBean.logs}" />
+		<h:outputText value="Rules" rendered="#{dockBean.rules}" />
+		<h:outputText value="Reports" rendered="#{dockBean.reports}" /> 
+		-->
+	</h:panelGroup>
+</ui:composition>
